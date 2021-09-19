@@ -91,7 +91,7 @@
       let chWidth = document.getElementById('changeWidth')
       this.drawer = !this.drawer
       if(this.drawer) {
-        chWidth.style.width = '940px'
+        chWidth.style.width = '800px'
       }
     }
   },

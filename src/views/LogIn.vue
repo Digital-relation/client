@@ -194,9 +194,9 @@
     }),
     methods: {
       validate(e) {
-        this.$refs.form.validate()
         if(this.username === '' || this.password === '' || this.select === null || this.select1 === null || this.checkbox === false) {
           e.preventDefault();
+          this.$refs.form.validate()
         } else {
           this.$router.push('/menu')
         }

@@ -12,9 +12,9 @@
         </div>
         <div>
           <div class="margin float-right">
-            <div>
+            <div class="animetionImg">
               <v-img
-                class="icon"
+                class="icon animationImg"
                 @click="signIn()"
                 alt="Register"
                 height="100"
@@ -53,8 +53,8 @@
   position: relative;
 }
 .margin {
-  padding-top: 100px;
-  padding-left: 200px;
+  padding-top: 90px;
+  padding-left: 100px;
   position: absolute;
 }
 .animation {
@@ -95,6 +95,17 @@
 }
 .icon {
   cursor: pointer;
+}
+@keyframes animationImg {
+  0% {
+    border: 0px solid rgb(1,131,61, 0.74) 
+  }
+  50% {
+    border: 10px solid rgb(1,131,61, 0.74)
+  }
+  100% {
+    border: 0px solid rgb(1,131,61, 0.74)
+  }
 }
 /* .demo-wrap {
   position: relative;

@@ -11,13 +11,14 @@
         filled
         dense
         prepend-inner-icon="mdi-magnify"
-      ></v-text-field>
+      />
     </div>
     <div style="padding-right: 200px;" class="white--text text-uppercase text-subtitle-2">
       <span>Kurslar</span>
     </div>
     <div class="mt-5">
       <v-btn
+        tile
         @click="showTeam"
         style="border-left: 5px solid white"
         width="300"
@@ -34,30 +35,34 @@
           {{ chevronDownUp ? 'mdi-chevron-down' : 'mdi-chevron-up' }}
         </v-icon>
       </v-btn>
-      <div style="margin-top:20px" v-if="showedTeam">
+      <div style="margin-top:10px" v-if="showedTeam">
         <div>
           <v-btn
+            v-for="course in courses" 
+            :key="course.iD"
+            tile
             @click="showStudents"
-            style="border-left: 5px solid white; margin-bottom: 10px;"
+            style="border-left: 10px double white; margin-bottom: 10px;"
             width="300"
-            height="50"
+            height="45"
             color="rgb(8,183,92)"
             block
             depressed
             >
-            <span class="white--text text-uppercase font-weight-bold text-body-1">2331-H</span>
+            <span class="white--text text-uppercase font-weight-bold text-body-1">{{ course.team }}</span>
             <v-spacer></v-spacer>
             <v-icon
               color="white"
             >
-              {{ chevronRightLeft ? 'mdi-chevron-left' : 'mdi-chevron-right' }}
+              {{ course.chevronRightLeft ? 'mdi-chevron-right' : 'mdi-chevron-left'}}
             </v-icon>
           </v-btn>
         </div>
       </div>
     </div>
-    <div class="mt-5">
+    <div class="mt-3">
       <v-btn
+        tile
         @click="showTeam1"
         style="border-left: 5px solid white"
         width="300"
@@ -74,30 +79,34 @@
           {{ chevronDownUp1 ? 'mdi-chevron-down' : 'mdi-chevron-up' }}
         </v-icon>
       </v-btn>
-      <div style="margin-top:20px" v-if="showedTeam1">
+      <div style="margin-top:10px" v-if="showedTeam1">
         <div>
           <v-btn
+            v-for="course in courses" 
+            :key="course.iD"
+            tile
             @click="showStudents1"
-            style="border-left: 5px solid white; margin-bottom: 10px;"
+            style="border-left: 10px double white; margin-bottom: 10px;"
             width="300"
             height="50"
             color="rgb(8,183,92)"
             block
             depressed
             >
-            <span class="white--text text-uppercase font-weight-bold text-body-1">2331-H</span>
+            <span class="white--text text-uppercase font-weight-bold text-body-1">{{ course.team }}</span>
             <v-spacer></v-spacer>
             <v-icon
               color="white"
             >
-              {{ chevronRightLeft1 ? 'mdi-chevron-left' : 'mdi-chevron-right' }}
+              {{ course.chevronRightLeft ? 'mdi-chevron-right' : 'mdi-chevron-left' }}
             </v-icon>
           </v-btn>
         </div>
       </div>
     </div>
-    <div class="mt-5">
+    <div class="mt-3">
       <v-btn
+        tile
         @click="showTeam2"
         style="border-left: 5px solid white"
         width="300"
@@ -114,30 +123,34 @@
           {{ chevronDownUp2 ? 'mdi-chevron-down' : 'mdi-chevron-up' }}
         </v-icon>
       </v-btn>
-      <div style="margin-top:20px" v-if="showedTeam2">
+      <div class="d-flex flex-column" style="margin-top:10px;" v-if="showedTeam2">
         <div>
           <v-btn
+            v-for="course in courses" 
+            :key="course.iD"
+            tile
             @click="showStudents2"
-            style="border-left: 5px solid white; margin-bottom: 10px;"
+            style="border-left: 10px double white; margin-bottom: 10px;"
             width="300"
             height="50"
             color="rgb(8,183,92)"
             block
             depressed
             >
-            <span class="white--text text-uppercase font-weight-bold text-body-1">2331-H</span>
+            <span class="white--text text-uppercase font-weight-bold text-body-1">{{ course.team }}</span>
             <v-spacer></v-spacer>
             <v-icon
               color="white"
             >
-              {{ chevronRightLeft2 ? 'mdi-chevron-left' : 'mdi-chevron-right' }}
+              {{ course.chevronRightLeft ? 'mdi-chevron-right' : 'mdi-chevron-left' }}
             </v-icon>
           </v-btn>
         </div>
       </div>
     </div>
-    <div class="mt-5">
+    <div class="mt-3">
       <v-btn
+        tile
         @click="showTeam3"
         style="border-left: 5px solid white"
         width="300"
@@ -154,9 +167,12 @@
           {{ chevronDownUp3 ? 'mdi-chevron-down' : 'mdi-chevron-up' }}
         </v-icon>
       </v-btn>
-      <div style="margin-top:20px" v-if="showedTeam3">
+      <div style="margin-top:10px" v-if="showedTeam3">
         <div>
           <v-btn
+            v-for="course in courses" 
+            :key="course.iD"
+            tile
             @click="showStudents3"
             style="border-left: 10px double white; margin-bottom: 10px;"
             width="300"
@@ -165,19 +181,20 @@
             block
             depressed
             >
-            <span class="white--text text-uppercase font-weight-bold text-body-1">2331-H</span>
+            <span class="white--text text-uppercase font-weight-bold text-body-1">{{ course.team }}</span>
             <v-spacer></v-spacer>
             <v-icon
               color="white"
             >
-              {{ chevronRightLeft3 ? 'mdi-chevron-left' : 'mdi-chevron-right' }}
+              {{ course.chevronRightLeft ? 'mdi-chevron-right' : 'mdi-chevron-left' }}
             </v-icon>
           </v-btn>
         </div>
       </div>
     </div>
-    <div class="mt-5">
+    <div class="mt-3">
       <v-btn
+        tile
         @click="showTeam4"
         style="border-left: 5px solid white"
         width="300"
@@ -194,46 +211,79 @@
           {{ chevronDownUp4 ? 'mdi-chevron-down' : 'mdi-chevron-up' }}
         </v-icon>
       </v-btn>
-      <div style="margin-top:20px" v-if="showedTeam4">
+      <div style="margin-top:10px" v-if="showedTeam4">
         <div>
           <v-btn
+            v-for="course in courses" 
+            :key="course.iD"
+            tile
             @click="showStudents4"
-            style="border-left: 5px solid white; margin-bottom: 10px;"
+            style="border-left: 10px double white; margin-bottom: 10px;"
             width="300"
             height="50"
             color="rgb(8,183,92)"
             block
             depressed
             >
-            <span class="white--text text-uppercase font-weight-bold text-body-1">2331-H</span>
+            <span class="white--text text-uppercase font-weight-bold text-body-1">{{ course.team }}</span>
             <v-spacer></v-spacer>
             <v-icon
               color="white"
             >
-              {{ chevronRightLeft4 ? 'mdi-chevron-left' : 'mdi-chevron-right' }}
+              {{ course.chevronRightLeft ? 'mdi-chevron-right' : 'mdi-chevron-left' }}
             </v-icon>
           </v-btn>
         </div>
       </div>
     </div>
   </div>
-  <div class="pt-5 d-flex">
-    <span style="color: rgb(1,131,61);" class="text-uppercase font-weight-bold pl-15 text-md-h6">Menejment fakultediniň sanly gatnaşyk hasabaty</span>
-    <span class="text-uppercase font-weight-bold pl-16 text-subtitle-1 pt-1">{{ getFullDate }}</span>
-    <span class="text-uppercase font-weight-bold pl-16 text-subtitle-1 pt-1">{{ getFullTime }}</span>
-    <v-badge
-      class="pl-16 pr-5"
-      :content="messages"
-      :value="messages"
-      color="green"
-      overlap
-    >
-      <v-dialog
-        v-model="dialog"
-        transition="dialog-top-transition"
-        max-width="550"
-        height="700"
+  <div class="pt-5">
+    <div class="d-flex">
+      <span style="color: rgb(1,131,61);" class="text-uppercase font-weight-bold pl-15 text-md-h6">Menejment fakultediniň sanly gatnaşyk hasabaty</span>
+      <span class="text-uppercase font-weight-bold pl-16 text-subtitle-1 pt-1">{{ getFullDate }}</span>
+      <span class="text-uppercase font-weight-bold pl-16 text-subtitle-1 pt-1">{{ getFullTime }}</span>
+      <v-badge
+        class="pl-16 pr-5"
+        :content="messages"
+        :value="messages"
+        color="green"
+        overlap
       >
+        <v-dialog
+          v-model="dialog"
+          transition="dialog-top-transition"
+          max-width="550"
+          height="700"
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-img
+              v-bind="attrs"
+              v-on="on"
+              alt="sms"
+              src="../assets/smsicon.png"
+              transition="scale-transition"
+            ></v-img>
+          </template>
+          <template v-slot:default="dialog">
+            <v-card>
+              <v-toolbar
+                color="green"
+                dark
+              >Türkmen Döwlet Ykdysadyýet we Dolandyryş Instituty</v-toolbar>
+              <v-card-text>
+                <div class="text-h5 pa-5">Bellikler!!!</div>
+              </v-card-text>
+              <v-card-actions class="justify-end">
+                <v-btn
+                  text
+                  @click="dialog.value = false"
+                >
+                  <span class="green--text">Ýapmak</span>
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </template>
+        </v-dialog>
         <template v-slot:activator="{ on, attrs }">
           <v-img
             v-bind="attrs"
@@ -243,59 +293,87 @@
             transition="scale-transition"
           ></v-img>
         </template>
-        <template v-slot:default="dialog">
-          <v-card>
-            <v-toolbar
-              color="green"
-              dark
-            >Türkmen Döwlet Ykdysadyýet we Dolandyryş Instituty</v-toolbar>
-            <v-card-text>
-              <div class="text-h5 pa-5">Bellikler!!!</div>
-            </v-card-text>
-            <v-card-actions class="justify-end">
-              <v-btn
-                text
-                @click="dialog.value = false"
-              >
-                <span class="green--text">Ýapmak</span>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </template>
-      </v-dialog>
-      <template v-slot:activator="{ on, attrs }">
-        <v-img
-          v-bind="attrs"
-          v-on="on"
-          alt="sms"
-          src="../assets/smsicon.png"
-          transition="scale-transition"
-        ></v-img>
-      </template>
-    </v-badge>
+      </v-badge>
+    </div>
   </div>
+  <div>
+    <div style="background-color: rgb(1,131,61);" class="mt-2 d-flex">
+      <div style="background-color: white;" class="pa-4 mt-3">
+        <span style="color: rgb(1,131,61);" class="pl-3 pr-3 text-uppercase font-weight-bold text-md-subtitle-2">Gatnaşyk nyzam</span>
+      </div>
+      <div style="border-right: 2px solid rgb(8,183,92)" class="pa-3 ma-3">
+        <span class="pr-7 pl-5 text-uppercase font-weight-bold white--text text-md-subtitle-2">Sapaklaryň hasabaty</span>
+      </div>
+      <div style="border-right: 2px solid rgb(8,183,92)" class="pa-3 ma-3">
+        <span class="pr-7 text-uppercase font-weight-bold white--text text-md-subtitle-2">Aýlyk jemi</span>
+      </div>
+      <div style="border-right: 2px solid rgb(8,183,92)" class="pa-3 ma-3">
+        <span class="pr-7 text-uppercase font-weight-bold white--text text-md-subtitle-2">Umumy ýaşaýyş jaýy</span>
+      </div>
+      <div class="pa-3 ma-3">
+        <span class="pl-7 text-uppercase font-weight-bold white--text text-md-subtitle-2">Şertnama</span>
+      </div>
+    </div>
+  </div>
+  <div v-if="hideWhenShowTeams" style="height: calc(100vh - 132px);" class="d-flex align-center justify-center">
+    <div>
+      <v-img
+        alt="TDYDI"
+        height="50"
+        width="40"
+        src="../assets/topargorkez.png"
+        aspect-ratio="1"
+        transition="scale-transition"
+      >
+        <template v-slot:placeholder>
+          <v-row
+            class="fill-height ma-0"
+            align="center"
+            justify="center"
+          >
+            <v-progress-circular
+              indeterminate
+              color="grey lighten-5"
+            ></v-progress-circular>
+          </v-row>
+        </template>
+      </v-img>
+    </div>
+    <div class="ml-5">
+      <span style="color: rgb(1,131,61);" class="font-weight-bold text-md-h5">Topar görkez</span>
+    </div>
+  </div>
+  <teams-relation v-if="showWhenHiddedText"></teams-relation>
 </div>
 </template>
 
 <script>
+  import TeamsRelation from '@/components/TeamsRelation.vue'
   export default {
+    components: {
+      TeamsRelation,
+    },
     data: () => ({
+      hideWhenShowTeams: true,
+      showWhenHiddedText: false,
       showedTeam: false,
       showedTeam1: false,
+      showedTeam3: false,
       chevronDownUp: true,
       chevronDownUp1: true,
-      chevronRightLeft: true,
-      chevronRightLeft1: true,
-      showedTeam2: false,
       chevronDownUp2: true,
-      chevronRightLeft2: true,
-      showedTeam3: false,
+      showedTeam2: false,
+      chevroTeam3: false,
       chevronDownUp3: true,
-      chevronRightLeft3: true,
       showedTeam4: false,
       chevronDownUp4: true,
-      chevronRightLeft4: true,
       messages: 1,
+      dialog: false,
+      courses: [
+        { iD:1, team:'2351-H', chevronRightLeft:false },
+        { iD:2, team:'2251-H', chevronRightLeft:false },
+        { iD:3, team:'2051-H', chevronRightLeft:false }
+      ],
     }),
     methods: {
       showTeam() {
@@ -305,6 +383,12 @@
         this.showedTeam3 = false
         this.showedTeam4 = false
         this.chevronDownUp = !this.chevronDownUp
+        this.showWhenHiddedText = false
+        this.hideWhenShowTeams = true
+        this.chevronDownUp1 = true
+        this.chevronDownUp2 = true
+        this.chevronDownUp3 = true
+        this.chevronDownUp4 = true
       },
       showTeam1() {
         this.showedTeam1 = !this.showedTeam1
@@ -313,12 +397,28 @@
         this.showedTeam3 = false
         this.showedTeam4 = false
         this.chevronDownUp1 = !this.chevronDownUp1
+        this.showWhenHiddedText = false
+        this.hideWhenShowTeams = true
+        this.chevronDownUp = true
+        this.chevronDownUp2 = true
+        this.chevronDownUp3 = true
+        this.chevronDownUp4 = true
       },
       showStudents() {
-        this.chevronRightLeft = !this.chevronRightLeft
+        this.courses.forEach((course) => {
+          course.chevronRightLeft = !course.chevronRightLeft
+          console.log(course.iD);
+        })
+        this.showWhenHiddedText = !this.showWhenHiddedText
+        this.hideWhenShowTeams = !this.hideWhenShowTeams
       },
       showStudents1() {
-        this.chevronRightLeft1 = !this.chevronRightLeft1
+        this.courses.forEach((course) => {
+          course.chevronRightLeft = !course.chevronRightLeft
+        })
+        this.showWhenHiddedText = !this.showWhenHiddedText
+        this.hideWhenShowTeams = !this.hideWhenShowTeams
+        
       },
       showTeam2() {
         this.showedTeam2 = !this.showedTeam2
@@ -327,9 +427,19 @@
         this.showedTeam3 = false
         this.showedTeam4 = false
         this.chevronDownUp2 = !this.chevronDownUp2
+        this.showWhenHiddedText = false
+        this.hideWhenShowTeams = true
+        this.chevronDownUp = true
+        this.chevronDownUp1 = true
+        this.chevronDownUp3 = true
+        this.chevronDownUp4 = true
       },
       showStudents2() {
-        this.chevronRightLeft2 = !this.chevronRightLeft2
+        this.courses.forEach((course) => {
+          course.chevronRightLeft = !course.chevronRightLeft
+        })
+        this.showWhenHiddedText = !this.showWhenHiddedText
+        this.hideWhenShowTeams = !this.hideWhenShowTeams
       },
       showTeam3() {
         this.showedTeam3 = !this.showedTeam3
@@ -338,9 +448,19 @@
         this.showedTeam2 = false
         this.showedTeam4 = false
         this.chevronDownUp3 = !this.chevronDownUp3
+        this.showWhenHiddedText = false
+        this.hideWhenShowTeams = true
+        this.chevronDownUp = true
+        this.chevronDownUp1 = true
+        this.chevronDownUp2 = true
+        this.chevronDownUp4 = true
       },
       showStudents3() {
-        this.chevronRightLeft3 = !this.chevronRightLeft3
+        this.courses.forEach((course) => {
+          course.chevronRightLeft = !course.chevronRightLeft
+        })
+        this.showWhenHiddedText = !this.showWhenHiddedText
+        this.hideWhenShowTeams = !this.hideWhenShowTeams
       },
       showTeam4() {
         this.showedTeam4 = !this.showedTeam4
@@ -349,9 +469,19 @@
         this.showedTeam2 = false
         this.showedTeam3 = false
         this.chevronDownUp4 = !this.chevronDownUp4
+        this.showWhenHiddedText = false
+        this.hideWhenShowTeams = true
+        this.chevronDownUp = true
+        this.chevronDownUp1 = true
+        this.chevronDownUp2 = true
+        this.chevronDownUp3 = true
       },
       showStudents4() {
-        this.chevronRightLeft4 = !this.chevronRightLeft4
+        this.courses.forEach((course) => {
+          course.chevronRightLeft = !course.chevronRightLeft
+        })
+        this.showWhenHiddedText = !this.showWhenHiddedText
+        this.hideWhenShowTeams = !this.hideWhenShowTeams
       }
     },
     computed: {
@@ -364,7 +494,7 @@
         let today = new Date();
         let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         return time
-      }
+      },
     }
   }
 </script>
